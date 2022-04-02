@@ -1,6 +1,6 @@
 <?php
-    const LBS='Library/';
-    const VIEWS='Views/';
+    const LBS='library/';
+    const VIEWS='views/';
 
     define('HOST', 'localhost');
     define('DB', 'hyt_trading');
@@ -8,7 +8,7 @@
     define('PASSWORD', "");
     define('CHARSET', 'utf8mb4');
 
-    define('DFT', 'Default/');
-    define('RQ', 'Resource/');
+    define('DFT', 'default/');
+    define('RQ', 'resource/');
     define('URL', 'http://localhost/webferreteria/');
 ?>

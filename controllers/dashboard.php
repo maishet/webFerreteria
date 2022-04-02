@@ -1,13 +1,14 @@
+
 <?php
 
-class AdminController extends SessionController{
+class Dashboard extends SessionController{
 
     private $user;
 
     function __construct(){
         parent::__construct();
 
-        $this->user = $this->getUserSessionData();
+        //$this->user = $this->getUserSessionData();
         error_log("Dashboard::constructor() ");
     }
 
@@ -17,16 +18,16 @@ class AdminController extends SessionController{
         $expenses               = $this->getExpenses(5);
         $totalThisMonth         = $expensesModel->getTotalAmountThisMonth($this->user->getId());
         $maxExpensesThisMonth   = $expensesModel->getMaxExpensesThisMonth($this->user->getId());
-        $categories             = $this->getCategories();*/
+        $categories             = $this->getCategories();
 
-        /*$this->view->render('dashboard/index', [
+        $this->view->render('dashboard/index', [
             'user'                 => $this->user,
             'expenses'             => $expenses,
             'totalAmountThisMonth' => $totalThisMonth,
             'maxExpensesThisMonth' => $maxExpensesThisMonth,
             'categories'           => $categories
         ]);*/
-        $this->view->render('Admin/index');
+        $this->view->render('dashboard/index');
     }
     
     //obtiene la lista de expenses y $n tiene el número de expenses por transacción

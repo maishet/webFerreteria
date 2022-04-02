@@ -2,10 +2,7 @@
 /**
  * Controlador que también maneja las sesiones
  */
-require_once 'Classes/Session.php';
-require_once 'Models/Usermodel.php';
-
-class SessionController extends Controllers{
+class SessionController extends Controller{
     
     private $userSession;
     private $username;
@@ -54,7 +51,7 @@ class SessionController extends Controllers{
      * Abre el archivo JSON y regresa el resultado decodificado
      */
     private function getJSONFileConfig(){
-        $string = file_get_contents("Resource/access.json");
+        $string = file_get_contents("config/access.json");
         $json = json_decode($string, true);
 
         return $json;
@@ -150,7 +147,7 @@ class SessionController extends Controllers{
             break;
             }
         }
-        header('location: '. constant('URL'). $url);
+        header('location: '.$url);
         
     }
 
@@ -182,7 +179,6 @@ class SessionController extends Controllers{
             break;
             case 'logistica':
                 $this->redirect($this->defaultSites['logistica']);
-            break;
             case 'admin':
                 $this->redirect($this->defaultSites['admin']);
             break;
